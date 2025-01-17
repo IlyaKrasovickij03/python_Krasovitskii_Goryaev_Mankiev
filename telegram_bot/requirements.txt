@@ -1,0 +1,4 @@
+telebot==0.0.5
+pyTelegramBotAPI==4.26.0
+APScheduler==3.11.0
+python-decouple==3.8
