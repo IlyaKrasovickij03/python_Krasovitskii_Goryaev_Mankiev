@@ -663,7 +663,7 @@ def get_event_datetime(message):
                 logging.error(f"Ошибка при отправке сообщения об ошибке: {api_e}")
             return
 
-        select_event_by_participant_date(cursor, participant_id, event_datetime)
+        select_event_by_participant_date(cursor, participant_id, user_id, event_datetime)
         if cursor.fetchone():
             try:
                 msg = bot.send_message(

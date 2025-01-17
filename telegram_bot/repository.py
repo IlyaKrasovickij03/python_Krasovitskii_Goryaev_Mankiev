@@ -81,11 +81,11 @@ def delete_event(conn, cursor, event_id):
     cursor.execute("DELETE FROM events WHERE event_id=?", (event_id,))
     conn.commit()
 
-def select_event_by_participant_date(cursor, participant_id, event_datetime):
+def select_event_by_participant_date(cursor, participant_id, user_id, event_datetime):
     cursor.execute("""
             SELECT * FROM events
-            WHERE participant_id=? AND event_datetime=?
-        """, (participant_id, event_datetime.isoformat()))
+            WHERE participant_id=? OR creator_id=? AND event_datetime=?
+        """, (participant_id, user_id, event_datetime.isoformat()))
 
 def create_event(conn, cursor, user_id, participant_id, description, event_datetime):
     cursor.execute("""
