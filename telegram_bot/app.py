@@ -1,4 +1,5 @@
 import logging
+import sqlite3
 
 import telebot
 from apscheduler.schedulers.background import BackgroundScheduler

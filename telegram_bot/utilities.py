@@ -1,4 +1,7 @@
 import html
+
+from telebot import types
+
 from app import *
 from datetime import datetime, timedelta
 from apscheduler.triggers.date import DateTrigger
